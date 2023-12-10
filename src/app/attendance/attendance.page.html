@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Asistencia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <div>
+      <ion-button (click)="backStudent()">Volver a Alumno</ion-button>
+    </div>
+  </div>
+
+  <ion-card-content>
+    {{ subjectnameModal }}
+  </ion-card-content>
+
+  <ion-card>
+      <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let attendance of attendanceInfoReceived$">
+              <ion-item *ngIf="attendance.state">   {{ attendance.date }} Presente <br> </ion-item >
+              <ion-item  *ngIf="!attendance.state">  {{ attendance.date }} Auscente <br> </ion-item >
+            </ion-item>
+          </ion-list>
+      </ion-card-content>
+  </ion-card>

@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card id="content">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header> 
+  </ion-card>
+
+  <div >
+
+    <div id="content">
+      <ion-input 
+        class="center-content" 
+        label="Email" 
+        placeholder="Ingresa tu correo institucional"
+        [clearInput]="true"
+        labelPlacement="floating" 
+        autocomplete="off"
+        [(ngModel)]="userLoginModal.email">
+      </ion-input>
+    <div>
+
+    </div>
+      <ion-input 
+        class="center-content" 
+        label="Password" 
+        placeholder="Ingresa tu contraseña" 
+        [clearInput]="true"
+        type="Password"
+        labelPlacement="floating"
+        autocomplete="off"
+        [(ngModel)]="userLoginModal.password">
+      </ion-input>      
+    </div>
+
+    <div class="center-content">
+      <ion-button (click)="userLogin(userLoginModal)">Login</ion-button>
+    </div>
+
+    <img alt="logo" src="../../assets/img/logo.png" />
+
+    <div>
+      <a [routerLink]="['/register']">Registrate</a>
+    </div>
+    
+  </div>
+
+</ion-content>
